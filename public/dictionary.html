@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Papago Dictionary</title>
+    <link rel="stylesheet" href="style/foundation.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+  </head>
+  <body class="dictionary" onload='loadWords()'>
+
+<script src="js/dictionary.js"></script>
+
+<div class="row" id="header">
+  
+</div>
+<div class="row banner">
+    <div  class="large-12 columns">
+      <h2 class="white">Dictionary</h2>
+      
+    </div>
+</div>
+
+
+<div class="md-modal md-effect-12">
+
+    <div class="md-content">
+    <span class="md-close x lnr lnr-cross-circle"></span>
+
+      <form id="word-submission-form"class="form-submission">  
+      <h4 id="submissionTitle" class="white">Add Word(s)</h4>
+    
+        <div class="row">
+          <div class="large-12 columns">
+            <input type="text" id="word-sub" placeholder="Word">
+          </div>
+        </div>
+        <div>
+          <div class="row input-row">
+            <div class="def-line">
+              <div class="large-10 medium-10 small-10 columns">
+                <input type="text" class="def-sub" placeholder="Translation">
+              </div>
+              <div class="large-2 medium-2 small-2 columns">
+                <span onclick="addTranslation()"class="add-btn-field white lnr lnr-plus-circle"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div  class="box-3">
+        <a class="btn btn-three md-close" onclick="addWord()">SUBMIT</a>
+      </div>
+    
+      
+  
+  </form>
+        
+    </div>
+</div>
+
+<div class="md-overlay"></div>  
+<div  class="box-3 pink-bg">
+  <div onclick="submissionTitle('Add Word(s)');" class="btn btn-three md-trigger">
+    <span>Add word</span>
+  </div>
+<br>
+</div>
+
+<div class="container brown-bg">
+  <div  class="row ">
+    <div class="columns large-2 small-1"> &nbsp;</div>
+    <div id="wordCont" class="columns large-8 small-10">
+      
+    </div>
+    <div class="columns large-2 small-1"> &nbsp;</div>
+
+  </div>
+</div>
+
+    <script src="js/script.js"></script>
+    
+    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script src="js/parallax.js"></script>
+    <script>
+    var addListeners = function(){
+     
+  
+  $('.md-trigger').on('click', function() {
+    $('.md-modal').addClass('md-show');
+  });
+  
+  $('.md-close').on('click', function() {
+    $('.md-modal').removeClass('md-show');
+  });
+
+    $('.x').on('click', function() {
+    clearSubmission();
+  });
+
+
+  };
+
+    addListeners();
+
+   
+
+
+      $('.banner').parallax({imageSrc: 'img/ramadaBG.jpg', speed: 0.7});
+
+       $("#header").load("/components/header.html");
+    </script>
+  </body>
+</html>
+
+
+    

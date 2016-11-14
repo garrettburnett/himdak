@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation | Welcome</title>
+    <link rel="stylesheet" href="style/foundation.css">
+      <link rel="stylesheet" href="style/style.css">
+  </head>
+  <body class="home" onload='loadWords()'>
+        
+
+<script>
+var myWords;
+var loadWords = function(){
+
+  var url = './words'
+  loadURL(url, function(data){
+   myWords = JSON.parse(data);
+
+
+   //BEGIN MARKUP
+
+   var markUp = "";
+      for (var i = 0; i < myWords.length; i++){
+
+        markUp+="<h3>" + myWords[i].word +"</h3>";
+        markUp+="<h4>" + myWords[i].def +"</h4>";
+
+      }
+      document.getElementById("wordCont").innerHTML = markUp;
+
+  });
+
+}; 
+
+</script>
+
+<div class="top-bar" id="header">
+  
+</div>
+
+<div style="background-image: url('img/ramadaBG.jpg');" class="row banner">
+    <div  class="large-12 columns">
+      <h1>Sap</h1>
+    </div>
+</div>
+<div id="wordCont" class="row">
+
+</div>
+
+    <script src="js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script>
+      jQuery(document).foundation();
+      $("#header").load("/components/header.html");
+    </script>
+  </body>
+</html>
+
+
+    
